@@ -699,6 +699,25 @@
         if (body) body.append(status);
     }
 
+    // ---------- Name in the header ----------
+
+    // The name is shown once at a time: large in the intro, or small in the
+    // header after the intro's name has scrolled up behind it. On a project or
+    // post page the intro is not shown, so the header keeps the name.
+    function setupBrand() {
+        const root = document.documentElement;
+        const name = byId('hero-name');
+        const header = document.querySelector('.site-header');
+        if (!name || !header || !('IntersectionObserver' in window)) {
+            root.classList.remove('name-in-view');
+            return;
+        }
+        const observer = new IntersectionObserver(entries => {
+            root.classList.toggle('name-in-view', entries[entries.length - 1].isIntersecting);
+        }, { rootMargin: `-${Math.round(header.getBoundingClientRect().height)}px 0px 0px 0px` });
+        observer.observe(name);
+    }
+
     // ---------- Skip link ----------
 
     // Moves focus to the content without changing the address (which would
@@ -765,6 +784,7 @@
     // ---------- Start ----------
 
     start('the display choices', setupPrefs);
+    start('the header name', setupBrand);
     start('the menu', setupMenu);
     start('the skip link', setupSkipLink);
     start('the contact form', setupContactForm);

@@ -14,6 +14,9 @@
     <script>
         // Lets the stylesheet know scripts are running (used by the small-screen menu).
         document.documentElement.classList.add('js');
+        // The large name in the intro is on screen at first, so the copy in the
+        // header stays out of sight until that one scrolls away (see site.js).
+        if (!/^#(project|post)-/.test(location.hash)) document.documentElement.classList.add('name-in-view');
         // Apply the visitor's saved display choices before anything is drawn.
         // The site opens dark unless they have picked light.
         try {
