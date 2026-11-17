@@ -6,7 +6,7 @@ start: 2025-01
 end: 2025-04
 order: 8
 tags: [UX research]
-skills: User research | UX research | Usability testing (moderated and unmoderated) | Think-aloud testing | Affinity mapping | Qualitative and quantitative analysis | Mobile-first design (iOS, Android, web) | UserTesting
+skills: User research | UX research | Usability testing (moderated and unmoderated) | Think-aloud testing | Affinity mapping | Qualitative and quantitative analysis | Mobile-first design (iOS, Android, web) | UserTesting | FigJam
 ---
 
 - Moderated 5 remote think-aloud sessions on UserTesting and coded them in a rainbow spreadsheet and affinity map, producing 6 findings (3 strengths, 3 problems) backed by participant counts, quotes, and video highlight clips.

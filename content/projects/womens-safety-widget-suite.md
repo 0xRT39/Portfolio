@@ -5,7 +5,7 @@ start: 2022-07
 end: 2022-12
 order: 13
 tags: [Product design, UX research]
-skills: User research | UX research | Contextual inquiry | Affinity mapping | Personas | User-centered design (UCD) | User flows | Low- and high-fidelity prototyping
+skills: User research | UX research | Contextual inquiry | Affinity mapping | Personas | User-centered design (UCD) | User flows | Low- and high-fidelity prototyping | Microinteractions | FigJam
 ---
 
 - Synthesized 20 contextual inquiries into affinity maps, 4 personas, and risk scenarios that prioritized which safety modules to build first.
