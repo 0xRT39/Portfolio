@@ -1,0 +1,10 @@
+# Line endings: keep LF so frontmatter parsing is consistent
+* text=auto eol=lf
+
+# Binary assets
+*.woff2 binary
+*.png binary
+
+# Generated or third-party files: collapse them in diffs and leave them out of language stats
+content/site-content.js linguist-generated=true
+scripts/vendor/** linguist-vendored=true
