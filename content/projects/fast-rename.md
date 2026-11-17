@@ -6,6 +6,7 @@ start: 2025-09
 end: 2025-12
 order: 10
 tags: [Service design]
+skills: Heuristic evaluation | Expert review | Personas | Journey mapping | User Experience (UX) design | Low- and high-fidelity prototyping | Stakeholder management | Web Content Accessibility Guidelines (WCAG) 2.2 AA | Section 508 | Inclusive design
 ---
 
 - Assessed 3 agencies’ name-change journeys with Morville’s 7-principle UX Honeycomb after pivoting from screen-level heuristics, exposing **a 6–8-month, $230+ process with up to 3-hour phone waits**.

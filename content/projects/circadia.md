@@ -6,6 +6,7 @@ start: 2025-09
 end: 2025-12
 order: 15
 tags: [Product design, UX engineering]
+skills: Competitive analysis | Personas | Low- and high-fidelity prototyping | Rapid prototyping in code | Inclusive design | Arduino
 ---
 
 - Benchmarked 7 wearables and 21 studies, then designed 3 feedback states (Focus, Regulation, Recovery) with distinct light and haptic patterns, governed by a 7-rule logic table with fallbacks for unreliable sensor data.

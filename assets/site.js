@@ -599,6 +599,106 @@
         drawFont();
     }
 
+    // ---------- Skills: press one to see where it was used ----------
+
+    // Every role, every point under a role (data-skills in index.html) and every
+    // project (the "skills" line in its .md file) lists the skills it involved,
+    // spelled exactly as in the Skills section. A skill used somewhere becomes a
+    // button; pressing it lists that work right under its group.
+    function setupSkills() {
+        const chips = [...document.querySelectorAll('#skills .chips li')];
+        if (!chips.length) return;
+        const listed = node => (node.getAttribute('data-skills') || '').split('|').map(name => name.trim()).filter(Boolean);
+        const text = node => (node ? node.textContent.trim() : '');
+
+        const roles = [...document.querySelectorAll('#experience .role')].map(role => ({
+            id: role.id,
+            title: text(role.querySelector('.role-name')),
+            org: text(role.querySelector('.role-org')),
+            skills: listed(role),
+            points: [...role.querySelectorAll('.points li')].map(point => ({ node: point, skills: listed(point) }))
+        }));
+
+        function find(skill) {
+            const inRoles = roles
+                .map(role => ({ role, points: role.points.filter(point => point.skills.includes(skill)) }))
+                .filter(match => match.points.length || match.role.skills.includes(skill));
+            const inProjects = projects.filter(project => Array.isArray(project.skills) && project.skills.includes(skill));
+            return { inRoles, inProjects, total: inRoles.length + inProjects.length };
+        }
+
+        const status = el('p', { class: 'visually-hidden', role: 'status' });
+        const panel = el('div', { class: 'skill-results', hidden: true });
+        let active = null;   // { skill, button }
+
+        function close() {
+            if (active) active.button.setAttribute('aria-pressed', 'false');
+            active = null;
+            panel.hidden = true;
+            status.textContent = '';
+        }
+
+        function open(skill, button, found) {
+            if (active) active.button.setAttribute('aria-pressed', 'false');
+            active = { skill, button };
+            button.setAttribute('aria-pressed', 'true');
+
+            const closeButton = el('button', { type: 'button', class: 'skill-results-close' }, 'Clear');
+            closeButton.addEventListener('click', () => {
+                const last = active && active.button;
+                close();
+                focusQuietly(last);
+            });
+            fill(panel, el('div', { class: 'skill-results-head' }, el('h4', { class: 'skill-results-title' }, skill), closeButton));
+
+            if (found.inRoles.length) {
+                panel.append(el('p', { class: 'skill-results-label' }, 'Experience'));
+                panel.append(el('ul', { class: 'skill-results-list', role: 'list' }, ...found.inRoles.map(({ role, points }) => {
+                    const item = el('li', null, el('a', { href: `#${role.id}` }, role.title), el('span', { class: 'skill-results-org' }, hiddenText(', '), role.org));
+                    if (points.length) {
+                        const list = el('ul', { class: 'points', role: 'list' });
+                        for (const point of points) {
+                            const copy = el('li');
+                            copy.innerHTML = point.node.innerHTML;   // this page's own markup
+                            list.append(copy);
+                        }
+                        item.append(list);
+                    }
+                    return item;
+                })));
+            }
+            if (found.inProjects.length) {
+                panel.append(el('p', { class: 'skill-results-label' }, 'Projects'));
+                panel.append(el('ul', { class: 'skill-results-list', role: 'list' }, ...found.inProjects.map(project =>
+                    el('li', null,
+                        el('a', { href: `#project-${project.slug}` }, project.title),
+                        project.subtitle ? el('span', { class: 'skill-results-org' }, hiddenText(': '), project.subtitle) : null))));
+            }
+
+            // Show the results right under the group the skill belongs to.
+            button.closest('.skill-group').append(panel);
+            panel.hidden = false;
+            const count = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+            status.textContent = `${skill}: ${count(found.inRoles.length, 'role')} and ${count(found.inProjects.length, 'project')} listed below the group`;
+        }
+
+        for (const chip of chips) {
+            const skill = text(chip);
+            const found = find(skill);
+            if (!found.total) continue;   // not tied to a role or project: stays a plain label
+            const button = el('button', { type: 'button', class: 'chip-button', 'aria-pressed': 'false' },
+                skill, el('span', { class: 'count' }, hiddenText('('), String(found.total), hiddenText(')')));
+            button.addEventListener('click', () => {
+                if (active && active.button === button) close();
+                else open(skill, button, found);
+            });
+            fill(chip, button);
+            chip.classList.add('has-button');
+        }
+        const body = document.querySelector('#skills .section-body');
+        if (body) body.append(status);
+    }
+
     // ---------- Skip link ----------
 
     // Moves focus to the content without changing the address (which would
@@ -671,6 +771,7 @@
     start('the footer', setupFooter);
     start('the project list', setupProjects);
     start('the blog list', setupPosts);
+    start('the skills', setupSkills);
     start('page navigation', setupRouting);
     setupLikes();
 })();

@@ -6,6 +6,7 @@ start: 2025-02
 end: 2025-04
 order: 9
 tags: [UX research]
+skills: User research | UX research | Usability testing (moderated and unmoderated) | Think-aloud testing | System Usability Scale (SUS) | Keyboard navigation
 ---
 
 - Crafted a 17-page protocol mapping 5 research questions to 5 peripheral-free tasks, with success, time-on-task, error, and 1–5 difficulty metrics plus scripted moderator rules (15-second silence prompt, 5-minute skip offer).

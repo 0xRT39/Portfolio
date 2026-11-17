@@ -6,6 +6,7 @@ start: 2025-02
 end: 2025-05
 order: 7
 tags: [AI, UX research]
+skills: Usability testing (moderated and unmoderated) | Think-aloud testing | Severity ratings | Human-AI interaction | Human-in-the-loop (HITL)
 ---
 
 - Uncovered **a 33% scheduler task-failure rate and a 6x spread in completion time (31 vs. 185 s)** through think-aloud tests of 9 tasks across 3 role-based workflows, then severity-rated 14 issues by failure, efficiency, trust, and confusion.

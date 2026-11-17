@@ -6,6 +6,7 @@ start: 2025-01
 end: 2025-04
 order: 16
 tags: [Service design]
+skills: Service blueprints | Systems mapping | Stakeholder management
 ---
 
 - Mapped 5 service touchpoints across 4 blueprint layers and iterated a stakeholder systems map through 3 versions, from a tangled first draft to a concentric model of direct, secondary, and tertiary stakeholders.

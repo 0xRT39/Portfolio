@@ -6,6 +6,7 @@ start: 2022-07
 end: 2023-04
 order: 12
 tags: [Product design, AI]
+skills: Card sorting | Tree testing | System Usability Scale (SUS) | End-to-end product design | Information Architecture (IA) | Data visualization | Explainable AI (XAI) | Human-in-the-loop (HITL)
 ---
 
 - Defined the Information Architecture (IA) for 4 modules and 60+ screens, validated via card sorting and tree testing with 15 managers (**System Usability Scale (SUS): 86**).

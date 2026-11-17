@@ -203,6 +203,8 @@ function buildProjects(errors) {
                     summary: data.summary || '',
                     dates: projectDates(data.start, data.end, where, errors),
                     tags: asList(data.tags),
+                    // Skill names exactly as they appear in the Skills section, separated by " | ".
+                    skills: String(data.skills || '').split('|').map(skill => skill.trim()).filter(Boolean),
                     html: renderMarkdown(body)
                 }
             };

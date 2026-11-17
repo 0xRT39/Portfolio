@@ -54,7 +54,18 @@ tags: [UX engineering, Accessibility]
 | `start`, `end` | Year and month, like `2026-08`. `end` can be `present`. |
 | `order` | Position in the list. Lower numbers come first. |
 | `tags` | The disciplines. The filter buttons above the list are built from these. |
+| `skills` | Skills this project used, spelled exactly as in the Skills section and separated by ` \| `. |
 | `draft: true` | Keeps the file out of the site. |
+
+## Skills that link to the work
+
+Pressing a skill in the Skills section lists the roles, points and projects that used it.
+The links come from two places, and the names must match the Skills section exactly:
+
+- In `index.html`, each role and each point under it has a `data-skills="First skill|Second skill"` attribute.
+- In each project file, the `skills:` line: `skills: React | TypeScript | Storybook`.
+
+A skill that nothing points to stays a plain label.
 
 ## Write a blog post
 

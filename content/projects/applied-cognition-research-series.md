@@ -6,6 +6,7 @@ start: 2025-09
 end: 2025-12
 order: 6
 tags: [UX research]
+skills: Usability testing (moderated and unmoderated) | Cognitive walkthroughs | Think-aloud testing | Expert review | Design critique | NASA Task Load Index (NASA-TLX) | Readability audits | User Experience (UX) design | Human-Computer Interaction (HCI) | Color contrast
 ---
 
 - Diagnosed usability failures in 5 interfaces through think-aloud tests, cognitive walkthroughs, NASA-TLX, and readability audits, tracing each to a named principle such as pre-attentive pop-out, Gestalt grouping, or working-memory load.
