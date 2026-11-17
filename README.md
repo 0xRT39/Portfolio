@@ -15,6 +15,10 @@ There is nothing to install: no packages, no framework, no third-party requests.
 
 `content/site-content.js` is generated from the Markdown files. Don't edit it by hand.
 
+The build also stamps a version onto the stylesheet and script addresses in `index.html`
+(`site.css?v=...`), so visitors' browsers pick up changes straight away instead of reusing
+an old saved copy. Run the build after changing `assets/site.css` or `assets/site.js` too.
+
 ## Preview on your computer
 
 Open `index.html` in a browser. That's all it needs.

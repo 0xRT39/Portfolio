@@ -15,7 +15,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { generate, OUTPUT, ROOT } = require('./build.js');
+const { generate, OUTPUT, PAGE, ROOT } = require('./build.js');
 
 const problems = [];
 const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
@@ -24,7 +24,7 @@ const isExternal = url => /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url);
 const stripQuery = url => url.split('#')[0].split('?')[0];
 
 // 1 and 2: content
-const { source, projects, posts, errors } = generate();
+const { source, projects, posts, errors, page } = generate();
 problems.push(...errors);
 if (!errors.length) {
     const onDisk = fs.existsSync(OUTPUT) ? fs.readFileSync(OUTPUT, 'utf8') : null;
@@ -32,6 +32,9 @@ if (!errors.length) {
         problems.push('content/site-content.js is missing. Run: node scripts/build.js');
     } else if (onDisk !== source) {
         problems.push('content/site-content.js is out of date. Run: node scripts/build.js');
+    }
+    if (page !== fs.readFileSync(PAGE, 'utf8')) {
+        problems.push('index.html has old version stamps on its stylesheet or scripts. Run: node scripts/build.js');
     }
 }
 
