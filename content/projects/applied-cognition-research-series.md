@@ -6,7 +6,7 @@ start: 2025-09
 end: 2025-12
 order: 6
 tags: [UX research]
-skills: Usability testing (moderated and unmoderated) | Cognitive walkthroughs | Think-aloud testing | Expert review | Design critique | NASA Task Load Index (NASA-TLX) | Readability audits | User Experience (UX) design | Human-Computer Interaction (HCI) | Color contrast | Severity ratings | Design rationale | Qualitative and quantitative analysis | Inclusive design
+skills: Usability testing (moderated and unmoderated) | Cognitive walkthroughs | Think-aloud testing | Expert review | Design critique | NASA Task Load Index (NASA-TLX) | Readability audits | User Experience (UX) design | Human-Computer Interaction (HCI) | Color contrast | Severity ratings | Design rationale | Qualitative and quantitative analysis | Inclusive design | Low- and high-fidelity prototyping
 # Illustrative results (written to show an ideal candidate's outcomes; not measured in the coursework):
 #   the larger samples (8 players, 10 TV participants, 5 + 6 Ableton beginners, 6 GIMP validators, 6 EA participants),
 #   every redesign-validation number, the miss and mix-up rates, contrast ratios, remote presses, reading grades,
@@ -85,6 +85,10 @@ I interviewed 5 beginners about how they thought Live records, then watched them
 
 *The two views beginners have to connect.*
 
+[![Three screens from the clickable Ableton Live prototype: the hint after a silent first Play, the labeled Record to Arrangement button while clips play, and the labeled Back to Arrangement state with a one-click fix.](assets/projects/applied-cognition-research-series/prototype-ableton.webp)](prototypes/ableton-jam-to-song/)
+
+*The redesign, in Live’s own interface. [Try the clickable prototype](prototypes/ableton-jam-to-song/).*
+
 ## 4. Exporting and merging in GIMP 3.0
 
 Three novices took **13 to 20 minutes** to export a PNG, and one never found the merge command.
@@ -104,6 +108,10 @@ The redesign made three changes:
 
 *The GIMP 3.0 workspace used in the sessions.*
 
+[![Three screens from the clickable GIMP 3.0 prototype: the File menu with Save a copy as PNG/JPG under Save, the plain PNG options dialog with More options, and the Layers panel menu with Merge all layers and a preview.](assets/projects/applied-cognition-research-series/prototype-gimp.webp)](prototypes/gimp-export-and-merge/)
+
+*The redesign: a plain export path and Merge all layers where people looked for it. [Try the clickable prototype](prototypes/gimp-export-and-merge/).*
+
 ## 5. Installing and launching a game in the EA app
 
 Getting from Install to playing means keeping track of several steps. When the launch fails, the app says only that "an error on our end" occurred, and recovering means finding a separate App Recovery restart.
@@ -121,6 +129,10 @@ Six adults went through the flow twice: once in the current app, with a launch e
 [![Two EA app dialogs: a launch-failure message with no cause or fix, and a separate App Recovery restart prompt.](assets/projects/applied-cognition-research-series/ea-error-and-recovery.webp)](assets/projects/applied-cognition-research-series/ea-error-and-recovery.webp)
 
 *The current error and its only recovery path.*
+
+[![Three screens from the clickable EA app prototype: the Install, Verify, Play progress card while installing, the rewritten launch error with Repair, Reinstall and Cancel, and the repair running inside the same card.](assets/projects/applied-cognition-research-series/prototype-ea.webp)](prototypes/ea-install-and-play/)
+
+*The redesign: one progress card, and an error that names the fix. [Try the clickable prototype](prototypes/ea-install-and-play/).*
 
 ## What tied them together
 

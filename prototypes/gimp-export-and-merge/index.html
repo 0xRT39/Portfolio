@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exporting and merging in GIMP 3.0: clickable prototype · Raj Tanishq</title>
+<meta name="description" content="Clickable prototype from Research Brief 4 of the Applied Cognition Research Series.">
+<script>
+try {
+  if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  if (localStorage.getItem('font') === 'dyslexic') document.documentElement.setAttribute('data-font', 'dyslexic');
+} catch (e) {}
+</script>
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../viewer.css">
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="../../index.html#project-applied-cognition-research-series">← Applied Cognition Research Series</a>
+  <h1>Exporting and merging in GIMP 3.0</h1>
+  <p class="kicker">Clickable prototype · Research Brief 4</p>
+  <p class="intro">Novices took 13 to 20 minutes to export a PNG, lost in jargon-heavy dialogs, and one never found the merge command. This prototype shows the redesign in GIMP 3.0’s interface: Save a copy as PNG/JPG next to Save, a plain options dialog with the rest under More options, and Merge all layers in the Layers panel. With it, median export time fell from <strong>1,100 to 95 seconds</strong>, and all 6 novices merged the layers.</p>
+  <p class="intro">Click what you would use (File, Save a copy as PNG/JPG, Save copy, the Layers panel menu, Merge all layers), or step through with Next and Back. Clicking anywhere else shows what is clickable.</p>
+  <div class="bar" role="group" aria-label="Prototype controls">
+    <button type="button" id="prev">← Back</button>
+    <button type="button" id="next">Next →</button>
+    <button type="button" id="restart">Restart</button>
+    <span class="counter" id="counter"></span>
+    <span class="spacer"></span>
+    <label class="opt"><input type="checkbox" id="show-all"> Show clickable areas</label>
+    <input type="checkbox" id="auto-on" checked hidden>
+  </div>
+  <div class="stage" id="stage"><img id="screen" src="screens/01.webp" alt="Screen 01: Workspace" width="1440" height="900"></div>
+  <p class="auto" id="auto" aria-live="polite"></p>
+  <p class="sr" id="live" aria-live="polite"></p>
+  <div class="below">
+    <section class="note" aria-labelledby="note-title"><h2 id="note-title"></h2><div id="note-body"></div></section>
+    <nav class="screens" aria-labelledby="screens-title"><h2 id="screens-title">Screens</h2><ol id="screen-list"></ol></nav>
+  </div>
+  <noscript><p>This prototype needs JavaScript to click through. Here are its screens in order:</p><ol><li><img src="screens/01.webp" alt="Screen 01: Workspace" width="1440" height="900" loading="lazy"></li><li><img src="screens/02.webp" alt="Screen 02: File menu" width="1440" height="900" loading="lazy"></li><li><img src="screens/03.webp" alt="Screen 03: Save a copy dialog" width="1440" height="900" loading="lazy"></li><li><img src="screens/04.webp" alt="Screen 04: PNG options" width="1440" height="900" loading="lazy"></li><li><img src="screens/05.webp" alt="Screen 05: More options" width="1440" height="900" loading="lazy"></li><li><img src="screens/06.webp" alt="Screen 06: Copy saved" width="1440" height="900" loading="lazy"></li><li><img src="screens/07.webp" alt="Screen 07: Layers panel menu" width="1440" height="900" loading="lazy"></li><li><img src="screens/08.webp" alt="Screen 08: Layers merged" width="1440" height="900" loading="lazy"></li></ol></noscript>
+  <p class="fineprint">A recreation made for this portfolio: each screen is an image, with clickable areas where the prototype’s links are. GIMP is made by the GIMP project; this prototype is not affiliated with or endorsed by them. The flyer and files shown are made up, and the icons are generic.</p>
+</main>
+<script>window.PROTOTYPE = {"start": "01", "screens": [{"id": "01", "title": "Workspace", "image": "01.webp", "links": [{"x": 0.139, "y": 3.444, "w": 2.493, "h": 2.28, "to": "02", "label": "File"}], "auto": null, "note": {"title": "Start · A finished 4-layer flyer", "body": "The task is to share this flyer as a PNG. In GIMP 3.0 it took novices 13 to 20 minutes, mostly lost choosing between Save As… and Export As…; 2 of 3 saved an .xcf file and then could not find a PNG.\nClick File."}}, {"id": "02", "title": "File menu", "image": "02.webp", "links": [{"x": 0.208, "y": 28.09, "w": 23.472, "h": 6.012, "to": "03", "label": "Save a copy as PNG/JPG"}], "auto": null, "note": {"title": "Fix 1 · Save a copy as PNG/JPG… next to Save", "body": "The new item sits right under Save, and each of the two says in one line what it makes: Save keeps the layers in a GIMP project (.xcf); Save a copy makes a flat picture to share. Export As… is still there for people who know it."}}, {"id": "03", "title": "Save a copy dialog", "image": "03.webp", "links": [{"x": 70.119, "y": 76.556, "w": 6.81, "h": 2.946, "to": "04", "label": "Save copy"}], "auto": null, "note": {"title": "Fix 1 · One plain dialog", "body": "The dialog asks only what a novice needs: name, folder and format. PNG and JPG are described by what they are good for, not by technical names, and a note confirms the layers stay safe in the project."}}, {"id": "04", "title": "PNG options", "image": "04.webp", "links": [{"x": 33.819, "y": 48.979, "w": 6.973, "h": 2.057, "to": "05", "label": "More options"}, {"x": 59.371, "y": 57.259, "w": 6.81, "h": 2.946, "to": "06", "label": "Save copy"}], "auto": null, "note": {"title": "Fix 2 · Advanced options under More options", "body": "The options step shows one choice, file size, with a sentence saying it never lowers quality. Interlacing, pixel format and metadata are folded under More options, and the summary states their defaults in plain words."}}, {"id": "05", "title": "More options", "image": "05.webp", "links": [{"x": 33.819, "y": 36.757, "w": 6.973, "h": 2.057, "to": "04", "label": "More options"}, {"x": 59.371, "y": 69.521, "w": 6.81, "h": 2.946, "to": "06", "label": "Save copy"}], "auto": null, "note": {"title": "Fix 2 · Nothing taken away", "body": "Every advanced option is one click away, each with a one-line explanation of what it does and its default. The rewritten dialog text reads at about grade 7, down from grade 11–12, with no unexplained terms."}}, {"id": "06", "title": "Copy saved", "image": "06.webp", "links": [{"x": 98.194, "y": 41.889, "w": 1.528, "h": 2.444, "to": "07", "label": "Layers panel menu"}, {"x": 84.514, "y": 53.333, "w": 15.486, "h": 44.0, "to": "07", "label": "Layers list"}], "auto": null, "note": {"title": "Feedback · Say what happened", "body": "A message confirms what was saved and where, with Show in folder.\nNext task: merge the layers. Participants looked for this in the Layers panel, so click the panel menu button (top right of Layers) or a layer."}}, {"id": "07", "title": "Layers panel menu", "image": "07.webp", "links": [{"x": 78.681, "y": 45.0, "w": 20.694, "h": 4.535, "to": "08", "label": "Merge all layers"}], "auto": null, "note": {"title": "Fix 3 · Merge all layers in the Layers panel menu", "body": "Merge all layers is now the first item in the Layers panel menu, where people looked for it, with a one-line description and a preview of the result. In GIMP 3.0 the command lives in the Image menu as Merge Visible Layers…; one of three novices never found it, and participants could not tell it apart from Merge Down or Flatten Image."}}, {"id": "08", "title": "Layers merged", "image": "08.webp", "links": [], "auto": null, "note": {"title": "Result · One layer, and a way back", "body": "The panel shows a single merged layer, and the message says how to undo. In validation all 6 new novices merged the layers, against 2 of 3 in GIMP 3.0."}}]};</script>
+<script src="../viewer.js"></script>
+</body>
+</html>

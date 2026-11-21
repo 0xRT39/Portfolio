@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installing and launching a game in the EA app: clickable prototype · Raj Tanishq</title>
+<meta name="description" content="Clickable prototype from Research Brief 5 of the Applied Cognition Research Series.">
+<script>
+try {
+  if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  if (localStorage.getItem('font') === 'dyslexic') document.documentElement.setAttribute('data-font', 'dyslexic');
+} catch (e) {}
+</script>
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../viewer.css">
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="../../index.html#project-applied-cognition-research-series">← Applied Cognition Research Series</a>
+  <h1>Installing and launching a game in the EA app</h1>
+  <p class="kicker">Clickable prototype · Research Brief 5</p>
+  <p class="intro">Players lost track between installing and launching, and the launch error named neither a cause nor a fix. This prototype shows the redesign: one Install, Verify, Play card; an error that says what is wrong; and Repair, Reinstall and Cancel right inside it. With it, NASA-TLX frustration fell from <strong>90 to 20</strong>, and <strong>6 of 6</strong> participants recovered without help (2 of 6 before).</p>
+  <p class="intro">Click what you would use (Starfall Rally, Install, Play, Repair), or step through with Next and Back. Clicking anywhere else shows what is clickable.</p>
+  <div class="bar" role="group" aria-label="Prototype controls">
+    <button type="button" id="prev">← Back</button>
+    <button type="button" id="next">Next →</button>
+    <button type="button" id="restart">Restart</button>
+    <span class="counter" id="counter"></span>
+    <span class="spacer"></span>
+    <label class="opt"><input type="checkbox" id="show-all"> Show clickable areas</label>
+    <label class="opt"><input type="checkbox" id="auto-on" checked> Auto-advance timed screens</label>
+  </div>
+  <div class="stage" id="stage"><img id="screen" src="screens/01.webp" alt="Screen 01: Library" width="1440" height="900"></div>
+  <p class="auto" id="auto" aria-live="polite"></p>
+  <p class="sr" id="live" aria-live="polite"></p>
+  <div class="below">
+    <section class="note" aria-labelledby="note-title"><h2 id="note-title"></h2><div id="note-body"></div></section>
+    <nav class="screens" aria-labelledby="screens-title"><h2 id="screens-title">Screens</h2><ol id="screen-list"></ol></nav>
+  </div>
+  <noscript><p>This prototype needs JavaScript to click through. Here are its screens in order:</p><ol><li><img src="screens/01.webp" alt="Screen 01: Library" width="1440" height="900" loading="lazy"></li><li><img src="screens/02.webp" alt="Screen 02: Game page: ready to install" width="1440" height="900" loading="lazy"></li><li><img src="screens/03.webp" alt="Screen 03: Installing" width="1440" height="900" loading="lazy"></li><li><img src="screens/04.webp" alt="Screen 04: Checking files" width="1440" height="900" loading="lazy"></li><li><img src="screens/05.webp" alt="Screen 05: Ready to play" width="1440" height="900" loading="lazy"></li><li><img src="screens/06.webp" alt="Screen 06: Launch error" width="1440" height="900" loading="lazy"></li><li><img src="screens/07.webp" alt="Screen 07: Repairing" width="1440" height="900" loading="lazy"></li><li><img src="screens/08.webp" alt="Screen 08: Playing" width="1440" height="900" loading="lazy"></li></ol></noscript>
+  <p class="fineprint">A recreation made for this portfolio: each screen is an image, with clickable areas where the prototype’s links are. The EA app belongs to Electronic Arts; this prototype is not affiliated with or endorsed by them. The games, artwork, player names and friends shown are made up, and the icons are generic.</p>
+</main>
+<script>window.PROTOTYPE = {"start": "01", "screens": [{"id": "01", "title": "Library", "image": "01.webp", "links": [{"x": 16.319, "y": 12.444, "w": 10.0, "h": 21.111, "to": "02", "label": "Starfall Rally"}], "auto": null, "note": {"title": "Start · The library", "body": "The task: install a new game and play it. In the current app, 5 of 6 participants lost track of where they were between installing and launching.\nClick Starfall Rally."}}, {"id": "02", "title": "Game page: ready to install", "image": "02.webp", "links": [{"x": 31.111, "y": 31.201, "w": 7.004, "h": 3.613, "to": "03", "label": "Install"}], "auto": null, "note": {"title": "Fix 3 · One card for Install → Verify → Play", "body": "Install and Play now live in one progress card on the game page. It names the current step and the next one, and every coloured step also has a text label (Done, Now, Next) for people who can’t rely on colour.\nClick Install."}}, {"id": "03", "title": "Installing", "image": "03.webp", "links": [{"x": 29.653, "y": 14.0, "w": 30.556, "h": 29.538, "to": "04", "label": "Move on (progress card)"}], "auto": {"to": "04", "ms": 2000}, "note": {"title": "Fix 3 · Progress you can read", "body": "A percentage and the time left replace the old indeterminate progress display. Play stays locked, and the card says when it unlocks.\nIt moves on by itself after 2 seconds, or click the card."}}, {"id": "04", "title": "Checking files", "image": "04.webp", "links": [{"x": 29.653, "y": 14.0, "w": 30.556, "h": 29.538, "to": "05", "label": "Move on (progress card)"}], "auto": {"to": "05", "ms": 2000}, "note": {"title": "Fix 3 · Checking files is its own step", "body": "In the current app, 4 of 6 participants pressed Play before verification had finished, which caused the launch error. Here the check is a visible step with a count, and Play stays locked until it is done.\nIt moves on by itself after 2 seconds, or click the card."}}, {"id": "05", "title": "Ready to play", "image": "05.webp", "links": [{"x": 31.111, "y": 31.201, "w": 5.511, "h": 3.613, "to": "06", "label": "Play"}], "auto": null, "note": {"title": "Ready to play", "body": "Play turns blue only when every step is done. For this walkthrough the launch fails on purpose, as it did in the study (a renamed game file).\nClick Play."}}, {"id": "06", "title": "Launch error", "image": "06.webp", "links": [{"x": 45.222, "y": 45.208, "w": 6.401, "h": 3.613, "to": "07", "label": "Repair"}, {"x": 52.318, "y": 45.208, "w": 8.196, "h": 3.613, "to": "03", "label": "Reinstall"}, {"x": 61.208, "y": 45.208, "w": 6.917, "h": 3.613, "to": "05", "label": "Cancel"}], "auto": null, "note": {"title": "Fixes 1 and 2 · An error that names the problem and the fix", "body": "Before: “An error on our end caused your launch to fail. Try again a little later.” It named neither a cause nor a fix: 4 of 6 retried again and again, and only 2 of 6 found the separate App Recovery restart. Now the message says what is wrong and what to do, with Repair as the main button and Reinstall and Cancel beside it, each explained in one line. Reading grade: 10.4 before, 6.8 now.\nClick Repair (Reinstall goes back to installing; Cancel closes the message)."}}, {"id": "07", "title": "Repairing", "image": "07.webp", "links": [{"x": 29.653, "y": 14.0, "w": 30.556, "h": 29.538, "to": "08", "label": "Move on (progress card)"}], "auto": {"to": "08", "ms": 2000}, "note": {"title": "Fix 2 · Repair happens right here", "body": "Repair runs inside the same progress card, with the time left and a note that saves are safe. No app restart and no signing in again.\nIt moves on by itself after 2 seconds, or click the card."}}, {"id": "08", "title": "Playing", "image": "08.webp", "links": [{"x": 0.0, "y": 12.222, "w": 12.5, "h": 4.222, "to": "01", "label": "Library"}], "auto": null, "note": {"title": "Result · Playing", "body": "The game starts by itself after the repair, and a message says what was fixed. In validation all 6 participants recovered from the error on their first try (2 of 6 in the current app), and the median time from Install to playing fell from 6 min 40 s to 2 min 50 s.\nClick Library to start again."}}]};</script>
+<script src="../viewer.js"></script>
+</body>
+</html>

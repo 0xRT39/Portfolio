@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From jam to song in Ableton Live 12: clickable prototype · Raj Tanishq</title>
+<meta name="description" content="Clickable prototype from Research Brief 3 of the Applied Cognition Research Series.">
+<script>
+try {
+  if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  if (localStorage.getItem('font') === 'dyslexic') document.documentElement.setAttribute('data-font', 'dyslexic');
+} catch (e) {}
+</script>
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../viewer.css">
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="../../index.html#project-applied-cognition-research-series">← Applied Cognition Research Series</a>
+  <h1>From jam to song in Ableton Live 12</h1>
+  <p class="kicker">Clickable prototype · Research Brief 3</p>
+  <p class="intro">Beginners lost the thread between jamming in Session View and recording a song. This prototype shows the three fixes in Live’s own interface: a hint the first time Play is silent, a labeled Record to Arrangement button with a confirmation, and a labeled Back to Arrangement state. With it, <strong>5 of 6</strong> beginners finished unaided (1 of 5 before), in <strong>4 minutes instead of 11</strong>.</p>
+  <p class="intro">Click what you would use (Show me, Record to Arrangement, Stop, View Arrangement, Play Arrangement), or step through with Next and Back. Clicking anywhere else shows what is clickable.</p>
+  <div class="bar" role="group" aria-label="Prototype controls">
+    <button type="button" id="prev">← Back</button>
+    <button type="button" id="next">Next →</button>
+    <button type="button" id="restart">Restart</button>
+    <span class="counter" id="counter"></span>
+    <span class="spacer"></span>
+    <label class="opt"><input type="checkbox" id="show-all"> Show clickable areas</label>
+    <input type="checkbox" id="auto-on" checked hidden>
+  </div>
+  <div class="stage" id="stage"><img id="screen" src="screens/01.webp" alt="Screen 01: Session View: first Play" width="1440" height="900"></div>
+  <p class="auto" id="auto" aria-live="polite"></p>
+  <p class="sr" id="live" aria-live="polite"></p>
+  <div class="below">
+    <section class="note" aria-labelledby="note-title"><h2 id="note-title"></h2><div id="note-body"></div></section>
+    <nav class="screens" aria-labelledby="screens-title"><h2 id="screens-title">Screens</h2><ol id="screen-list"></ol></nav>
+  </div>
+  <noscript><p>This prototype needs JavaScript to click through. Here are its screens in order:</p><ol><li><img src="screens/01.webp" alt="Screen 01: Session View: first Play" width="1440" height="900" loading="lazy"></li><li><img src="screens/02.webp" alt="Screen 02: Session View: clips playing" width="1440" height="900" loading="lazy"></li><li><img src="screens/03.webp" alt="Screen 03: Session View: recording to Arrangement" width="1440" height="900" loading="lazy"></li><li><img src="screens/04.webp" alt="Screen 04: Session View: recording confirmed" width="1440" height="900" loading="lazy"></li><li><img src="screens/05.webp" alt="Screen 05: Arrangement View: Back to Arrangement labeled" width="1440" height="900" loading="lazy"></li><li><img src="screens/06.webp" alt="Screen 06: Arrangement View: Arrangement playing" width="1440" height="900" loading="lazy"></li></ol></noscript>
+  <p class="fineprint">A recreation made for this portfolio: each screen is an image, with clickable areas where the prototype’s links are. Ableton Live belongs to Ableton AG; this prototype is not affiliated with or endorsed by them. The tracks, clips and project shown are made up, and the icons are generic.</p>
+</main>
+<script>window.PROTOTYPE = {"start": "01", "screens": [{"id": "01", "title": "Session View: first Play", "image": "01.webp", "links": [{"x": 33.681, "y": 13.444, "w": 4.75, "h": 2.233, "to": "02", "label": "Show me"}, {"x": 92.083, "y": 5.556, "w": 7.917, "h": 2.222, "to": "02", "label": "Scene 1 launch"}, {"x": 13.889, "y": 5.556, "w": 7.5, "h": 2.222, "to": "02", "label": "Clip 1 launch"}, {"x": 21.389, "y": 5.556, "w": 7.5, "h": 2.222, "to": "02", "label": "Clip 2 launch"}, {"x": 28.889, "y": 5.556, "w": 7.5, "h": 2.222, "to": "02", "label": "Clip 3 launch"}], "auto": null, "note": {"title": "Fix 1 · Explain silence on the first Play", "body": "Play in Session View starts the Arrangement timeline, which is still empty, so nothing sounds. A one-line hint now says why and points at the clip ▶ buttons.\nShow me (or any highlighted ▶) launches Scene 1 and moves on."}}, {"id": "02", "title": "Session View: clips playing", "image": "02.webp", "links": [{"x": 51.944, "y": 0.667, "w": 10.139, "h": 2.222, "to": "03", "label": "Record to Arrangement"}], "auto": null, "note": {"title": "Fix 2 · Make recording to Arrangement explicit", "body": "While clips play, a labeled Record to Arrangement button appears in the transport. Before, the only control was the unlabeled ● and nothing said it would capture Session launches.\nThe status bar explains what the button does."}}, {"id": "03", "title": "Session View: recording to Arrangement", "image": "03.webp", "links": [{"x": 43.194, "y": 0.889, "w": 1.389, "h": 1.778, "to": "04", "label": "Stop"}, {"x": 51.944, "y": 0.667, "w": 13.611, "h": 2.222, "to": "04", "label": "Recording to Arrangement"}], "auto": null, "note": {"title": "Fix 2 · Recording state", "body": "The button turns red and shows elapsed time, so it is clear the launches are being captured. Scene 2 is playing; Stop ends the take."}}, {"id": "04", "title": "Session View: recording confirmed", "image": "04.webp", "links": [{"x": 45.486, "y": 13.444, "w": 7.944, "h": 2.233, "to": "05", "label": "View Arrangement"}, {"x": 97.639, "y": 0.889, "w": 1.389, "h": 1.778, "to": "05", "label": "Arrangement View toggle"}], "auto": null, "note": {"title": "Fix 2 · Confirm the result", "body": "After Stop: \"Recorded 16 bars to Arrangement. Press Tab to see it.\" View Arrangement or the Arrangement toggle switches views (in Live, Tab would too); Undo removes the take."}}, {"id": "05", "title": "Arrangement View: Back to Arrangement labeled", "image": "05.webp", "links": [{"x": 21.875, "y": 13.444, "w": 7.7, "h": 2.233, "to": "06", "label": "Play Arrangement"}, {"x": 25.556, "y": 0.778, "w": 10.417, "h": 2.0, "to": "06", "label": "Back to Arrangement"}], "auto": null, "note": {"title": "Fix 3 · Label the Back to Arrangement state", "body": "After recording, the tracks still follow their Session clips, so Arrangement playback is silent: the step-7 failure in the walkthrough. The orange indicator now reads Back to Arrangement and opens a one-click Play Arrangement fix. Overridden clips stay dimmed and each track shows its own indicator."}}, {"id": "06", "title": "Arrangement View: Arrangement playing", "image": "06.webp", "links": [{"x": 95.972, "y": 0.889, "w": 1.389, "h": 1.778, "to": "01", "label": "Session View toggle (restart)"}], "auto": null, "note": {"title": "Arrangement plays", "body": "All four tracks follow the timeline again. Click the Session View toggle (top right) to restart the flow.\nNot changed: the small Session/Arrangement toggle itself. In validation, the 2 walkthrough steps that still failed both involved it."}}]};</script>
+<script src="../viewer.js"></script>
+</body>
+</html>
